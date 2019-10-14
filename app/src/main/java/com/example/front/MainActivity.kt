@@ -17,5 +17,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
+
+            var kidbutton = kidversion
+            kidbutton.setOnClickListener {
+                val nextIntent = Intent(this, KidActivity::class.java)
+                startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+
+        }
     }
 }
