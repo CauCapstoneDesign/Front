@@ -6,25 +6,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_centerInParent="true"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-29dp"
+        tools:layout_editor_absoluteY="29dp">
+
         <TextView
             android:id="@+id/status_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"/>
+            android:text="Hello World!" />
+
         <com.google.android.gms.common.SignInButton
             android:id="@+id/Google_Login"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:text="Sign Out "
-            android:id="@+id/Google_logout"/>
-    </LinearLayout>
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="268dp" />
+
+        <Button
+            android:id="@+id/Google_logout"
+            android:layout_width="122dp"
+            android:layout_height="63dp"
+            android:layout_alignTop="@+id/Google_Login"
+            android:layout_marginStart="-120dp"
+            android:layout_marginTop="67dp"
+            android:layout_toEndOf="@+id/Google_Login"
+            android:text="Sign Out " />
+
+    </RelativeLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.front
 
+import android.app.PendingIntent.getActivity
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
@@ -29,6 +30,7 @@ class LoginActivity : AppCompatActivity() {
     lateinit var Google_Logout: Button
     private lateinit var mAuth: FirebaseAuth
     private lateinit var mGoogleSignInClient: GoogleSignInClient
+    private lateinit var acct:GoogleSignInAccount
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun firebaseAuthWithGoogle(acct: GoogleSignInAccount) {
         Log.d("GoogleActivity", "firebaseAuthWithGoogle:" + acct.id!!)
-
+        this.acct=acct
         val credential = GoogleAuthProvider.getCredential(acct.idToken, null)
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this) { task ->
@@ -83,6 +85,15 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this@LoginActivity, "구글 로그인 인증 성공", Toast.LENGTH_SHORT).show()
                         val nextIntent = Intent(this, MainActivity::class.java)
                         startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+//                        acct = GoogleSignIn.getLastSignedInAccount()
+//                        if (acct != null) {
+//                            val personName = acct.displayName
+//                            val personGivenName = acct.givenName
+//                            val personFamilyName = acct.familyName
+//                            val personEmail = acct.email
+//                            val personId = acct.id
+//                            val personPhoto = acct.photoUrl
+//                        }
                     }
                 }
     }

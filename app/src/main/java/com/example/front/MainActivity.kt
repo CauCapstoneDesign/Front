@@ -13,9 +13,13 @@ class MainActivity : AppCompatActivity() {
 
         var adultbutton = adultversion
         adultbutton.setOnClickListener {
-            val nextIntent = Intent(this, AdultActivity::class.java)
+            val nextIntent = Intent(this, MapsActivity::class.java)
             startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 
         }
+
+
+
+
     }
 }
