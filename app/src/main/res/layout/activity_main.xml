@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/status_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"/>
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/Google_Login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:text="Sign Out "
-            android:id="@+id/signOutButton"/>
-    </LinearLayout>
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_centerInParent="true">
 
+        <Button
+            android:id="@+id/adultversion"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="96dp"
+            android:text="Adult " />
+
+        <Button
+            android:id="@+id/kidversion"
+            android:layout_width="116dp"
+            android:layout_height="110dp"
+            android:layout_toRightOf="@+id/adultversion"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="107dp"
+            android:text="Kid" />
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
