@@ -83,7 +83,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this@LoginActivity, "인증 실패", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this@LoginActivity, "구글 로그인 인증 성공", Toast.LENGTH_SHORT).show()
-                        val nextIntent = Intent(this, MainActivity::class.java)
+                        val nextIntent = Intent(this, MapsActivity::class.java)
                         startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 //                        acct = GoogleSignIn.getLastSignedInAccount()
 //                        if (acct != null) {

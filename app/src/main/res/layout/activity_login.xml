@@ -13,14 +13,9 @@
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
+        android:background="#ffffff"
         tools:layout_editor_absoluteX="-29dp"
         tools:layout_editor_absoluteY="29dp">
-
-        <TextView
-            android:id="@+id/status_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!" />
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/Google_Login"

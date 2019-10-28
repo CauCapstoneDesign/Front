@@ -1,6 +1,10 @@
 package com.example.front
 
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.location.Location
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,8 +15,11 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.CameraUpdateFactory
 import android.view.View
 import android.widget.TextView
+import androidx.core.app.ActivityCompat
 import com.google.android.gms.maps.GoogleMap
 import kotlinx.android.synthetic.main.marker_list.view.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_maps.*
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapClickListener,GoogleMap.OnMarkerClickListener{
@@ -20,7 +27,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
     private lateinit var mMap: GoogleMap
     private lateinit var view: View
     private lateinit var mapFragment: SupportMapFragment
-
+    private lateinit var fabGps: FloatingActionButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -29,6 +36,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         view = layoutInflater.inflate(R.layout.marker_list, null)
+
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -54,6 +62,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         }
         mMap.setOnMapClickListener(this)
         mMap.setOnMarkerClickListener(this)
+        setFloatingButtonAction()
+
         // for loop를 통한 n개의 마커 생성
         for (idx in 0..9) {
             val makerOptions = MarkerOptions()
@@ -67,6 +77,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         val zoomLevel = 16.0f
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(37.503444, 126.957041), zoomLevel))
 
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun setFloatingButtonAction(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.ACCESS_NETWORK_STATE), 1)
+
+        }
+        mMap.isMyLocationEnabled = true
+//        fabGps = fab_main as FloatingActionButton
+//
+//        fabGps.setOnClickListener {
+//            val markerOptions = MarkerOptions()
+//            mMap.setOnMyLocationChangeListener { arg0 -> mMap.addMarker(
+//                    markerOptions.position(LatLng(arg0.latitude, arg0.longitude)).title("It's Me!")); }
+//        }
     }
 
     override fun onMarkerClick(p0: Marker?): Boolean {
