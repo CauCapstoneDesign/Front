@@ -20,8 +20,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAgOx2rkGHHq4GK9SRHHnmVu85fMF0NXCk"/>
-        <activity android:name=".KidActivity"/>
-        <activity android:name=".MapsActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,6 +27,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".MapsActivity"/>
     </application>
 
 </manifest>

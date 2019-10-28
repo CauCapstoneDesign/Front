@@ -56,10 +56,6 @@
         "source": "C:\\Users\\mose\\.gradle\\caches\\transforms-2\\files-2.1\\96716cb8901563ff093d4866ba6095be\\res\\interpolator\\btn_checkbox_checked_mtrl_animation_interpolator_0.xml"
     },
     {
-        "merged": "D:\\Front\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_kid.xml.flat",
-        "source": "D:\\Front\\app\\src\\main\\res\\layout\\activity_kid.xml"
-    },
-    {
         "merged": "D:\\Front\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\mose\\.gradle\\caches\\transforms-2\\files-2.1\\96716cb8901563ff093d4866ba6095be\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
@@ -2222,6 +2218,10 @@
     {
         "merged": "D:\\Front\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\mose\\.gradle\\caches\\transforms-2\\files-2.1\\96716cb8901563ff093d4866ba6095be\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\Front\\app\\build\\intermediates\\res\\merged\\debug\\layout_marker_list.xml.flat",
+        "source": "D:\\Front\\app\\src\\main\\res\\layout\\marker_list.xml"
     },
     {
         "merged": "D:\\Front\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",

@@ -35,8 +35,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAgOx2rkGHHq4GK9SRHHnmVu85fMF0NXCk" />
 
-        <activity android:name="com.example.front.KidActivity" />
-        <activity android:name="com.example.front.MapsActivity" />
         <activity android:name="com.example.front.LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,6 +43,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.example.front.MainActivity" />
+        <activity android:name="com.example.front.MapsActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"

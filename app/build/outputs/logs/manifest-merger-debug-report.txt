@@ -1,15 +1,15 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-33:12
 MERGED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\682673b32a54638fd3ae81fa4cc93b5a\AndroidManifest.xml:2:1-93:12
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.4.2] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\b1a5f5a8d36c745cc046273b48790a69\AndroidManifest.xml:6:1-16:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\87d4e26dbec2d661adc695d34e986e27\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\96716cb8901563ff093d4866ba6095be\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\7076b9dcca6350506a940754fc40017e\AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:17:1-42:12
+MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\6caa3ffd9a9a50df61ca1934ac423ea1\AndroidManifest.xml:17:1-39:12
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\c638ce2b8fb561613cfc6cf735047714\AndroidManifest.xml:17:1-38:12
 MERGED from [com.google.android.gms:play-services-location:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\e85880303b2af3320f0a96a486221ee1\AndroidManifest.xml:2:1-9:12
@@ -56,16 +56,16 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\mose\.gradle
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\27e6b6688a788e9b29991b01d4b3b379\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\89d3e4eaba45ae55331ba30b0b8a69f6\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\c0bc716aeaa7f6d0ec07d84b0e949be9\AndroidManifest.xml:17:1-22:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:5:5-32
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:4:5-51
@@ -73,7 +73,7 @@ INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:3:5-61
 	android:versionCode
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-34:12
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:11-69
@@ -94,15 +94,15 @@ ADDED from D:\Front\app\src\main\AndroidManifest.xml:9:5-40
 	dist:instant
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:9:18-37
 application
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:11:5-32:19
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:11:5-31:19
 MERGED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\682673b32a54638fd3ae81fa4cc93b5a\AndroidManifest.xml:15:5-91:19
 MERGED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\682673b32a54638fd3ae81fa4cc93b5a\AndroidManifest.xml:15:5-91:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\87d4e26dbec2d661adc695d34e986e27\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\87d4e26dbec2d661adc695d34e986e27\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\7076b9dcca6350506a940754fc40017e\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\7076b9dcca6350506a940754fc40017e\AndroidManifest.xml:9:5-20
-MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:23:5-40:19
-MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:23:5-40:19
+MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\6caa3ffd9a9a50df61ca1934ac423ea1\AndroidManifest.xml:22:5-37:19
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\6caa3ffd9a9a50df61ca1934ac423ea1\AndroidManifest.xml:22:5-37:19
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\c638ce2b8fb561613cfc6cf735047714\AndroidManifest.xml:30:5-36:19
@@ -151,32 +151,28 @@ ADDED from D:\Front\app\src\main\AndroidManifest.xml:20:9-22:70
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:22:13-68
 	android:name
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:21:13-58
-activity#com.example.front.KidActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:23:9-48
-	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:23:19-46
-activity#com.example.front.MapsActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:24:9-50
-	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:24:19-47
 activity#com.example.front.LoginActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:25:9-30:20
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:23:9-28:20
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:25:19-48
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:23:19-48
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:26:13-29:29
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:24:13-27:29
 action#android.intent.action.MAIN
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:27:17-69
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:27:25-66
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:26:17-77
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:26:27-74
 activity#com.example.front.MainActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:31:9-49
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:29:9-49
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:31:19-47
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:29:19-47
+activity#com.example.front.MapsActivity
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:30:9-49
+	android:name
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:30:19-47
 uses-sdk
 INJECTED from D:\Front\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Front\app\src\main\AndroidManifest.xml
@@ -191,8 +187,8 @@ MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\mose\.gradle\caches\tr
 MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\96716cb8901563ff093d4866ba6095be\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\7076b9dcca6350506a940754fc40017e\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\7076b9dcca6350506a940754fc40017e\AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:21:5-44
-MERGED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:21:5-44
+MERGED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:21:5-44
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\6caa3ffd9a9a50df61ca1934ac423ea1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\6caa3ffd9a9a50df61ca1934ac423ea1\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\c638ce2b8fb561613cfc6cf735047714\AndroidManifest.xml:20:5-44
@@ -450,33 +446,33 @@ ADDED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\
 	android:name
 		ADDED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\682673b32a54638fd3ae81fa4cc93b5a\AndroidManifest.xml:87:13-79
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
-ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:24:9-31:50
+ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:26:13-46
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:26:13-46
 	android:launchMode
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:28:13-44
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:28:13-44
 	android:exported
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:27:13-36
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:27:13-36
 	android:permission
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:29:13-102
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:29:13-102
 	android:theme
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:30:13-72
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:30:13-72
 	tools:replace
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:31:13-47
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:31:13-47
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:25:13-85
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:25:13-85
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:33:9-39:19
+ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:33:9-39:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:35:13-37
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:35:13-37
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:34:13-84
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:34:13-84
 meta-data#com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar
-ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:36:13-38:85
+ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:36:13-38:85
 	android:value
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:38:17-82
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:38:17-82
 	android:name
-		ADDED from [com.google.firebase:firebase-auth:19.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ce7c1975fd6d2c713f8e23b5a0be16ce\AndroidManifest.xml:37:17-109
+		ADDED from [com.google.firebase:firebase-auth:19.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\abde7b0e5d55a3fac1d5119e2a169585\AndroidManifest.xml:37:17-109
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
 ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\6caa3ffd9a9a50df61ca1934ac423ea1\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents

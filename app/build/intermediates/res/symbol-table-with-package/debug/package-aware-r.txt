@@ -1245,6 +1245,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addressTxt
 id adjust_height
 id adjust_width
 id adultversion
@@ -1276,6 +1277,7 @@ id checkbox
 id checked
 id chronometer
 id circular
+id clientPic
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1358,10 +1360,12 @@ id masked
 id message
 id middle
 id mini
+id mobileTxt
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id name
+id nameTxt
 id name_layout
 id navigation_header_container
 id never
@@ -1545,7 +1549,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout activity_kid
 layout activity_login
 layout activity_main
 layout activity_maps
@@ -1585,6 +1588,7 @@ layout fui_provider_button_phone
 layout fui_register_email_layout
 layout fui_welcome_back_idp_prompt_layout
 layout fui_welcome_back_password_prompt_layout
+layout marker_list
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
