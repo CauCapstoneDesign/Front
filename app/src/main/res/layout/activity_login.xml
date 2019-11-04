@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/starbackground"
+    tools:context=".LoginActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,7 +12,7 @@
         android:layout_centerInParent="true"
         android:layout_gravity="center_horizontal"
         android:orientation="vertical"
-        android:background="#ffffff"
+
         tools:layout_editor_absoluteX="-29dp"
         tools:layout_editor_absoluteY="29dp">
 
@@ -24,7 +23,6 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="268dp" />
-
         <Button
             android:id="@+id/Google_logout"
             android:layout_width="122dp"
@@ -34,8 +32,6 @@
             android:layout_marginTop="67dp"
             android:layout_toEndOf="@+id/Google_Login"
             android:text="Sign Out " />
-
     </RelativeLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
