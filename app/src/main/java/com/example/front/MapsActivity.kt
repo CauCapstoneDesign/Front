@@ -82,12 +82,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         })
         fab1.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
-                val nextIntent = Intent(this@MapsActivity, EnrollMarkerActivity::class.java)
+                if(isSelectedMarker){
+                    val nextIntent = Intent(this@MapsActivity, EnrollMarkerActivity::class.java)
 
-                nextIntent.putExtra("marker.lat",onemarker.position.latitude.toString())
-                nextIntent.putExtra("marker.long",onemarker.position.longitude.toString())
-                nextIntent.putExtra("marker.addr",latToadd(onemarker.position))
-                startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                    nextIntent.putExtra("marker.lat",onemarker.position.latitude.toString())
+                    nextIntent.putExtra("marker.long",onemarker.position.longitude.toString())
+                    nextIntent.putExtra("marker.addr",latToadd(onemarker.position))
+                    startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                }
                 toggleFab()
             }
         })
@@ -157,7 +159,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
                             str, // 주소
                             10) // 최대 검색 결과 개수
                 } catch (e: IOException) {
-                    e.printStackTrace()
+//                    e.printStackTrace()
                 }
 
                 // 콤마를 기준으로 split

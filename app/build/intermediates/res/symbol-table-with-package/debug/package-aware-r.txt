@@ -1256,7 +1256,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
-id addImageButton
+id addImagebutton
 id addressTxt
 id addressname
 id adjust_height
@@ -1281,6 +1281,7 @@ id btn_holder
 id buttonPanel
 id button_create
 id button_done
+id button_layout
 id button_next
 id center
 id center_horizontal
@@ -1354,6 +1355,7 @@ id icon_group
 id icon_only
 id ifRoom
 id image
+id imageView
 id info
 id invisible
 id invisible_frame
@@ -1762,6 +1764,9 @@ string path_password_strike_through
 string project_id
 string search_menu_title
 string status_bar_notification_info_overflow
+string tedpermission_close
+string tedpermission_confirm
+string tedpermission_setting
 string twitter_consumer_key
 string twitter_consumer_secret
 style AlertDialog_AppCompat
@@ -2167,6 +2172,7 @@ style Theme_MaterialComponents_Light_NoActionBar
 style Theme_MaterialComponents_Light_NoActionBar_Bridge
 style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
+style Theme_Transparent_Permission
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark

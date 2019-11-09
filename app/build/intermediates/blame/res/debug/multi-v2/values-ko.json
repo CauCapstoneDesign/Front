@@ -55,6 +55,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\mose\\.gradle\\caches\\transforms-2\\files-2.1\\ef7593f88b387d33ccef7f0010fdbffe\\res\\values-ko\\values-ko.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,106,159",
+                        "endColumns": "50,52,52",
+                        "endOffsets": "101,154,207"
+                    },
+                    "to": {
+                        "startLines": "113,114,115",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "9823,9874,9927",
+                        "endColumns": "50,52,52",
+                        "endOffsets": "9869,9922,9975"
+                    }
+                },
+                {
                     "source": "C:\\Users\\mose\\.gradle\\caches\\transforms-2\\files-2.1\\15cbed79884822bb4267dcf630ad267b\\res\\values-ko\\values-ko.xml",
                     "from": {
                         "startLines": "2",
