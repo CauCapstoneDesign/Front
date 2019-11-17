@@ -1,137 +1,1 @@
-package com.example.front
-
-import android.Manifest
-import android.app.Activity
-import android.content.DialogInterface
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_enroll_marker.*
-import android.util.Log
-import android.view.View
-import android.content.Intent
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import com.gun0912.tedpermission.PermissionListener
-import com.gun0912.tedpermission.TedPermission
-import android.R
-import androidx.appcompat.app.AlertDialog
-import javax.swing.text.StyleConstants.setIcon
-
-
-
-
-
-class EnrollMarkerActivity : AppCompatActivity() {
-    private val GET_GALLERY_IMAGE = 200
-    private lateinit var  addImageButton: ImageView
-    private lateinit var addresNname : TextView
-    private lateinit var imageview:ImageView
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_enroll_marker)
-
-        addresNname = addressname
-        addImageButton = addImagebutton
-        imageview=imageView
-        val intents = intent
-
-        val d1 = intents.getStringExtra("marker.lat")
-        val d2 = intents.getStringExtra("marker.long")
-        val addr =intents.getStringExtra("marker.addr")
-        Log.d("인텐트 맵좌표","좌표: 위도(" + d1!!.toString()+ "),경도(" + (d2!!.toString()) + ")"+addr!!.toString())
-        addressname.text=addr
-
-        //TedPermission 라이브러리 -> 카메라 권한 획득
-        val permissionlistener = object : PermissionListener {
-            override fun onPermissionGranted() {
-                Toast.makeText(this@EnrollMarkerActivity, "Permission Granted", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onPermissionDenied(deniedPermissions: List<String>) {
-                Toast.makeText(this@EnrollMarkerActivity, "Permission Denied\n$deniedPermissions", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-            TedPermission.with(this)
-            .setPermissionListener(permissionlistener)
-            .setDeniedTitle("Permission denied")
-            .setDeniedMessage(
-            "If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")
-            .setGotoSettingButtonText("bla bla")
-            .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
-
-                .check()
-
-
-
-
-
-        addImageButton.setOnClickListener(object:View.OnClickListener{
-            override  fun onClick(var1: View){
-                makeDialog()
-//                val intent = Intent()
-//                intent.type = "image/*"
-//                intent.action = Intent.ACTION_PICK
-//                startActivityForResult(intent, GET_GALLERY_IMAGE)
-            }
-        })
-
-    }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == GET_GALLERY_IMAGE) {
-            if (resultCode == Activity.RESULT_OK) {
-                try {
-                    val selectedImageUri = data!!.data!!
-                    imageview.setImageURI(selectedImageUri)
-                } catch (e: Exception) {
-
-                }
-
-            } else if (resultCode == Activity.RESULT_CANCELED) {
-                Toast.makeText(this, "사진 선택 취소", Toast.LENGTH_LONG).show()
-            }
-        }
-    }
-    private fun makeDialog() {
-
-        val alt_bld = AlertDialog.Builder(this@EnrollMarkerActivity, R.style.MyAlertDialogStyle)
-
-        alt_bld.setTitle("사진 업로드").setIcon(R.drawable.check_dialog_64).setCancelable(
-
-                false).setPositiveButton("사진촬영",
-
-                DialogInterface.OnClickListener { dialog, id ->
-                    Log.v("알림", "다이얼로그 > 사진촬영 선택")
-
-                    // 사진 촬영 클릭
-
-                    takePhoto()
-                }).setNeutralButton("앨범선택",
-
-                DialogInterface.OnClickListener { dialogInterface, id ->
-                    Log.v("알림", "다이얼로그 > 앨범선택 선택")
-
-                    //앨범에서 선택
-
-                    selectAlbum()
-                }).setNegativeButton("취소   ",
-
-                DialogInterface.OnClickListener { dialog, id ->
-                    Log.v("알림", "다이얼로그 > 취소 선택")
-
-                    // 취소 클릭. dialog 닫기.
-
-                    dialog.cancel()
-                })
-
-        val alert = alt_bld.create()
-
-        alert.show()
-
-    }
-
-
-}
+package com.example.frontimport android.Manifestimport android.app.Activityimport android.content.DialogInterfaceimport androidx.appcompat.app.AppCompatActivityimport android.os.Bundleimport kotlinx.android.synthetic.main.activity_enroll_marker.*import android.util.Logimport android.view.Viewimport android.content.Intentimport android.net.Uriimport android.os.Environmentimport android.widget.ImageViewimport android.widget.TextViewimport android.widget.Toastimport androidx.appcompat.app.AlertDialogimport android.provider.MediaStore.*import androidx.core.content.FileProviderimport com.gun0912.tedpermission.PermissionListenerimport com.gun0912.tedpermission.TedPermissionimport java.io.Fileimport java.io.IOExceptionimport android.content.pm.PackageManagerimport android.graphics.Bitmapimport android.util.Base64import java.io.ByteArrayOutputStreamimport java.net.URLEncoderclass EnrollMarkerActivity : AppCompatActivity() {    private lateinit var addImageButton: ImageView    private lateinit var addresNname: TextView    private lateinit var imageview: ImageView    private var imgUri: Uri? = null    private var photoURI: Uri? = null    private var albumURI: Uri? = null    private val FROM_CAMERA = 0    private val FROM_ALBUM = 1    private lateinit var mCurrentPhotoPath: String    override fun onCreate(savedInstanceState: Bundle?) {        super.onCreate(savedInstanceState)        setContentView(R.layout.activity_enroll_marker)        addresNname = addressname        addImageButton = addImagebutton        imageview = imageView        val intents = intent        val d1 = intents.getStringExtra("marker.lat")        val d2 = intents.getStringExtra("marker.long")        val addr = intents.getStringExtra("marker.addr")        Log.d("인텐트 맵좌표", "좌표: 위도(" + d1!!.toString() + "),경도(" + (d2!!.toString()) + ")" + addr!!.toString())        addressname.text = addr        //Permission 얻는부분        getPermission()        addImageButton.setOnClickListener(object : View.OnClickListener {            override fun onClick(var1: View) {                makeDialog()            }        })    }    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {        super.onActivityResult(requestCode, resultCode, data)        if (resultCode != Activity.RESULT_OK) {            return        }        when (requestCode) {            FROM_ALBUM -> {                //앨범에서 가져오기                if (data!!.data != null) {                    try {                        var albumFile: File? = null                        albumFile = createImageFile()                        photoURI = data.data                        albumURI = Uri.fromFile(albumFile)                        galleryAddPic()                        imageview.setImageURI(photoURI)                        //cropImage();                    } catch (e: Exception) {                        e.printStackTrace()                        Log.v("알림", "앨범에서 가져오기 에러")                    }                }            }            FROM_CAMERA -> {                //카메라 촬영                try {                    Log.v("알림", "FROM_CAMERA 처리")                    galleryAddPic()                    imageview.setImageURI(imgUri)                } catch (e: Exception) {                    e.printStackTrace()                }            }        }    }    private fun makeDialog() {        val alt_bld = AlertDialog.Builder(this@EnrollMarkerActivity, R.style.MyAlertDialogStyle)        alt_bld.setTitle("사진 업로드").setIcon(R.drawable.ic_plus_24).setCancelable(                false).setPositiveButton("사진촬영",                DialogInterface.OnClickListener { dialog, id ->                    takePhoto()                }).setNeutralButton("앨범선택",                DialogInterface.OnClickListener { dialogInterface, id ->                    //앨범에서 선택                    selectAlbum()                }).setNegativeButton("취소   ",                DialogInterface.OnClickListener { dialog, id ->                    // 취소 클릭. dialog 닫기.                    dialog.cancel()                })        val alert = alt_bld.create()        alert.show()    }    private fun takePhoto() {        // 촬영 후 이미지 가져옴        val state = Environment.getExternalStorageState()        if (Environment.MEDIA_MOUNTED.equals(state)) {            val intent = Intent(ACTION_IMAGE_CAPTURE)            if (intent.resolveActivity(packageManager) != null) {                 lateinit var photoFile: File                    photoFile = createImageFile()                photoFile.let {                    val providerURI = FileProvider.getUriForFile(this, packageName, photoFile)                    imgUri = providerURI                    intent.putExtra(EXTRA_OUTPUT, providerURI)                    startActivityForResult(intent, FROM_CAMERA)                }            }        } else {            Log.v("알림", "저장공간에 접근 불가능")            return        }    }    @Throws(IOException::class)    fun createImageFile(): File {        val imgFileName = System.currentTimeMillis().toString() + ".jpg"        var imageFile: File? = null        val storageDir = File(Environment.getExternalStorageDirectory().toString() + "/Pictures")        if (!storageDir.exists()) {            Log.v("알림", "storageDir 존재 x $storageDir")            storageDir.mkdirs()        }        Log.v("알림", "storageDir 존재함 $storageDir")        imageFile = File(storageDir, imgFileName)        mCurrentPhotoPath = imageFile.absolutePath        return imageFile    }    //앨범 선택 클릭    fun selectAlbum() {        val intent = Intent(Intent.ACTION_PICK)        intent.type = Images.Media.CONTENT_TYPE        intent.type = "image/*"        startActivityForResult(intent, FROM_ALBUM)    }    fun BitMapToString(bitmap:Bitmap)    {         val baos =  ByteArrayOutputStream()        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)   //bitmap compress        var  arr:ByteArray = baos.toByteArray()        var image:String= Base64.encodeToString(arr, Base64.DEFAULT)        var temp :String =""        try {            temp = "&imagedevice=" + URLEncoder.encode(image, "utf-8")        } catch (e:Exception) {            Log.e("exception", e.toString())        }    }    fun galleryAddPic() {        val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)        val f = File(mCurrentPhotoPath)        val contentUri = Uri.fromFile(f)        mediaScanIntent.data = contentUri        sendBroadcast(mediaScanIntent)        Toast.makeText(this, "사진이 저장되었습니다", Toast.LENGTH_SHORT).show()    }    fun getPermission(){        //TedPermission 라이브러리 -> 카메라 권한 획득        val permissionlistener = object : PermissionListener {            override fun onPermissionGranted() {                Toast.makeText(this@EnrollMarkerActivity, "Permission Granted", Toast.LENGTH_SHORT).show()            }            override fun onPermissionDenied(deniedPermissions: List<String>) {                Toast.makeText(this@EnrollMarkerActivity, "Permission Denied\n$deniedPermissions", Toast.LENGTH_SHORT).show()            }        }        TedPermission.with(this)                .setPermissionListener(permissionlistener)                .setDeniedTitle("Permission denied").setDeniedMessage(                        "If you reject permission,you can not use this service\n\nPlease turn on permissions at [Setting] > [Permission]")                .setGotoSettingButtonText("Permission Adjust").setPermissions(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)                .check()    }}

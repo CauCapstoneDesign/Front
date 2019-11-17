@@ -95,6 +95,19 @@
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_sub2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/fab_sub1"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#ffffff"
+            android:src="@drawable/search"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabSize="normal" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_sub1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

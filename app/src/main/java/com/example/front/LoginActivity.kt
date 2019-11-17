@@ -1,7 +1,6 @@
 package com.example.front
 
-import android.app.PendingIntent.getActivity
-import android.content.DialogInterface
+
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
 import android.os.Bundle
@@ -9,15 +8,12 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
-import androidx.core.app.ActivityCompat.startActivityForResult
-import androidx.core.content.ContextCompat.startActivity
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.SignInButton
-
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_login.*
@@ -55,6 +51,9 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         Google_Logout.setOnClickListener(listener)
+
+        //Get the Spot Info
+
     }
 
     private fun signOut() {
@@ -83,6 +82,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this@LoginActivity, "인증 실패", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(this@LoginActivity, "구글 로그인 인증 성공", Toast.LENGTH_SHORT).show()
+
                         val nextIntent = Intent(this, MapsActivity::class.java)
                         startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
 //                        acct = GoogleSignIn.getLastSignedInAccount()

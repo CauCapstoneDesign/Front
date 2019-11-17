@@ -4,7 +4,7 @@ package com.example.front
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
+import android.graphics.Bitmap
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,11 +23,13 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_maps.*
 import android.location.Geocoder
 import android.location.Address
+import android.os.SystemClock
 import android.widget.Button
 import android.widget.EditText
 import java.io.IOException
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import com.example.data.Spot
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 
 
@@ -45,16 +47,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
     private lateinit var  onemarker :Marker
     private var isSelectedMarker = false
 
+    private lateinit var gettheSpot :GettheSpot
 
-
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+ override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+     // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
+
+
+        //맵 데이터 가져오기
+
+        gettheSpot=GettheSpot()
+        gettheSpot.takemap(this)
+        gettheSpot.onaction()
+
 
         //search button
         editText =search_editText
@@ -64,17 +72,26 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         initFloatingButtonAction()
 
 
-        mapFragment.getMapAsync(this) //동기화
         view = layoutInflater.inflate(R.layout.marker_list, null) //마커 클릭시
 
+
     }
+
+    fun getmapAsnc(){
+
+        //동기화
+        mapFragment.getMapAsync(this)
+    }
+
+
 
     private fun initFloatingButtonAction() {
          fab_open = AnimationUtils.loadAnimation(applicationContext, R.anim.fab_open)
          fab_close = AnimationUtils.loadAnimation(applicationContext, R.anim.fab_close)
+
         val fab: FloatingActionButton = fab_main as FloatingActionButton
         val fab1: FloatingActionButton = fab_sub1 as FloatingActionButton
-
+        val fab2: FloatingActionButton = fab_sub2 as FloatingActionButton
         fab.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
             toggleFab()
@@ -93,19 +110,30 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
                 toggleFab()
             }
         })
+        fab2.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View) {
+                val nextIntent=Intent(this@MapsActivity, GetHttpDataActivity::class.java)
+                startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                toggleFab()
+            }
+        })
 
     }
     fun toggleFab() {
         if (isFabOpen) {
             fab_main.setImageResource(R.drawable.ic_plus_24)
             fab_sub1.startAnimation(fab_close)
+            fab_sub2.startAnimation(fab_close)
             fab_sub1.isClickable = false
+            fab_sub2.isClickable = false
             isFabOpen = false
         }
         else {
             fab_main.setImageResource(R.drawable.ic_plus_24)
             fab_sub1.startAnimation(fab_open)
+            fab_sub2.startAnimation(fab_open)
             fab_sub1.isClickable = true
+            fab_sub2.isClickable = true
             isFabOpen = true
         }
     }
@@ -142,6 +170,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
                     .position(LatLng(37.503444 + (idx*0.001), 126.957041 + (idx*0.001)))
                     .title("마커$idx") // 타이틀.
                     .snippet("박상오교수님사랑해요 - 최창환 - ")
+            mMap.addMarker(makerOptions)
+        }
+//                 TODO: "modify spot uninitialize//
+        for (spot :Spot in gettheSpot.spot) {
+            Log.d("id", spot.id)
+            Log.d("latitude", spot.latitude)
+            Log.d("longitude", spot.longitude)
+        }
+        for (spot :Spot in gettheSpot.spot) {
+            val makerOptions = MarkerOptions()
+            makerOptions
+                    .position(LatLng(spot.latitude.toDouble(), spot.longitude.toDouble()))
+                    .title(spot.name) // 타이틀.
+                    .snippet(spot.address)
             mMap.addMarker(makerOptions)
         }
 

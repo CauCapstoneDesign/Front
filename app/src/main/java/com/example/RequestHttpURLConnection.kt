@@ -1,0 +1,97 @@
+package com.example
+
+import android.content.ContentValues
+import android.util.Log
+import java.io.BufferedReader
+import java.io.IOException
+import java.io.InputStreamReader
+import java.io.Reader
+import java.net.HttpURLConnection
+import java.net.MalformedURLException
+import java.net.URL
+
+
+
+class RequestHttpURLConnection {
+    fun request(_url: String, _params: ContentValues?): String? {
+
+        // HttpURLConnection 참조 변수.
+        lateinit var urlConn: HttpURLConnection
+        // URL 뒤에 붙여서 보낼 파라미터.
+        val sbParams = StringBuffer()
+
+        /**
+         * 1. StringBuffer에 파라미터 연결
+         */
+        // 보낼 데이터가 없으면 파라미터를 비운다.
+        if (_params == null)
+            sbParams.append("")
+        else {
+            // 파라미터가 2개 이상이면 파라미터 연결에 &가 필요하므로 스위칭할 변수 생성.
+            var isAnd = false
+            // 파라미터 키와 값.
+            var key: String
+            var value: String
+
+            for ((key1, value1) in _params.valueSet()) {
+                key = key1
+                value = value1.toString()
+
+                // 파라미터가 두개 이상일때, 파라미터 사이에 &를 붙인다.
+                if (isAnd)
+                    sbParams.append("&")
+
+                sbParams.append(key).append("=").append(value)
+
+                // 파라미터가 2개 이상이면 isAnd를 true로 바꾸고 다음 루프부터 &를 붙인다.
+                if (!isAnd)
+                    if (_params.size() >= 2)
+                        isAnd = true
+            }
+        }// 보낼 데이터가 있으면 파라미터를 채운다.
+
+        /**
+         * 2. HttpURLConnection을 통해 web의 데이터를 가져온다.
+         */
+        try {
+            val url = URL(_url)
+            urlConn = url.openConnection() as HttpURLConnection
+
+            // [2-1]. urlConn 설정.
+            urlConn.requestMethod="GET" // URL 요청에 대한 메소드 설정 : POST.
+            urlConn.setRequestProperty("Accept-Charset", "UTF-8") // Accept-Charset 설정.
+            urlConn.setRequestProperty("Context_Type", "application/x-www-form-urlencoded;cahrset=UTF-8")
+
+
+            // [2-3]. 연결 요청 확인.
+            // 실패 시 null을 리턴하고 메서드를 종료.
+            if (urlConn.responseCode !== HttpURLConnection.HTTP_OK) {
+                Log.d("response", "실패입니다")
+                return null
+            }
+            // [2-4]. 읽어온 결과물 리턴.
+            // 요청한 URL의 출력물을 BufferedReader로 받는다.
+            val reader = BufferedReader(InputStreamReader(urlConn.inputStream, "UTF-8") as Reader?)
+
+            // 출력물의 라인과 그 합에 대한 변수.
+            var page = ""
+
+            // 라인을 받아와 합친다.
+            for (line in reader.readLine()) {
+                page += line
+            }
+            return page
+
+        } catch (e: MalformedURLException) { // for URL.
+            e.printStackTrace()
+        } catch (e: IOException) { // for openConnection().
+            e.printStackTrace()
+        } finally {
+            urlConn.disconnect()
+        }
+
+        return null
+
+    }
+
+}

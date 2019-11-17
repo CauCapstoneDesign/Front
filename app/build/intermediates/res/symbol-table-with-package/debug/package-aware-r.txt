@@ -730,6 +730,7 @@ color fui_linkColor
 color fui_transparent
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color maincolor
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -792,6 +793,7 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color white
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1111,6 +1113,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable adult
+drawable album
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_bottom_border
@@ -1192,6 +1195,7 @@ drawable search
 drawable search_bar
 drawable splash
 drawable starbackground
+drawable take_photo
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable upper_search_text_view
@@ -1278,6 +1282,7 @@ id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
 id btn_holder
+id button
 id buttonPanel
 id button_create
 id button_done
@@ -1332,6 +1337,7 @@ id expand_activities_button
 id expanded_menu
 id fab_main
 id fab_sub1
+id fab_sub2
 id fill
 id fill_horizontal
 id fill_vertical
@@ -1349,6 +1355,7 @@ id heading
 id home
 id homeAsUp
 id horizontal
+id httpview
 id hybrid
 id icon
 id icon_group
@@ -1568,6 +1575,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_enroll_marker
+layout activity_get_http_data
 layout activity_login
 layout activity_main
 layout activity_maps
@@ -1763,6 +1771,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string project_id
 string search_menu_title
+string serverAddr
 string status_bar_notification_info_overflow
 string tedpermission_close
 string tedpermission_confirm
@@ -2013,6 +2022,7 @@ style FirebaseUI_TopProgressBar
 style FirebaseUI_Transparent
 style FirebaseUI_VerifyPhoneButton
 style FirebaseUI_WrapperStyle
+style MyAlertDialogStyle
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
@@ -2407,3 +2417,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml file_path
