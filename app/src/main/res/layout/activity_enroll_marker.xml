@@ -108,7 +108,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
-                        android:text="스팟이름을 입력해주세요"
+                        android:hint="스팟이름을 입력해주세요"
+                        android:text=""
+                        android:textColorHint="#000000"
                         android:textColor="#745959" />
                 </LinearLayout>
             </LinearLayout>

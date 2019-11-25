@@ -31,7 +31,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
@@ -47,7 +47,7 @@
 
                     <LinearLayout
                         android:layout_width="311dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginBottom="1dp"
                         android:background="@drawable/upper_search_text_view"
                         android:orientation="horizontal"
@@ -68,7 +68,9 @@
                             android:layout_width="282dp"
                             android:layout_height="wrap_content"
                             android:hint="Enter the Address."
-                            android:textColor="#000000" />
+                            android:textColor="#000000"
+                            android:gravity="left|center"
+                            android:background="@null"/>
                     </LinearLayout>
 
 
@@ -88,10 +90,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
+        android:layout_marginBottom="28dp"
         android:gravity="right"
         app:layout_anchorGravity="bottom|right|end"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -100,21 +106,22 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/fab_sub1"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="15dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
             android:backgroundTint="#ffffff"
             android:src="@drawable/search"
             android:visibility="invisible"
             app:borderWidth="0dp"
             app:fabSize="normal" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_sub1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/fab_main"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="15dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
             android:backgroundTint="#ffffff"
             android:src="@drawable/search"
             android:visibility="invisible"
@@ -125,11 +132,10 @@
             android:id="@+id/fab_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:src="@drawable/ic_plus_24"
-            app:layout_anchorGravity="bottom|right|end"
-             />
+            app:layout_anchorGravity="bottom|right|end" />
 
     </RelativeLayout>
 

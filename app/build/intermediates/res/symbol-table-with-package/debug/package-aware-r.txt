@@ -1355,7 +1355,6 @@ id heading
 id home
 id homeAsUp
 id horizontal
-id httpview
 id hybrid
 id icon
 id icon_group

@@ -85,6 +85,7 @@ class LoginActivity : AppCompatActivity() {
 
                         val nextIntent = Intent(this, MapsActivity::class.java)
                         startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                        finish()
 //                        acct = GoogleSignIn.getLastSignedInAccount()
 //                        if (acct != null) {
 //                            val personName = acct.displayName

@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Front</string>
-    <string name="serverAddr">http://18.189.185.82:3000</string>
+    <string name="serverAddr">http://18.222.119.238:3000</string>
 </resources>

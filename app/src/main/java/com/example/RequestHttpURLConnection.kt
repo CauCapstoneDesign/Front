@@ -12,6 +12,8 @@ import java.net.URL
 
 
 
+
+
 class RequestHttpURLConnection {
     fun request(_url: String, _params: ContentValues?): String? {
 
@@ -24,8 +26,10 @@ class RequestHttpURLConnection {
          * 1. StringBuffer에 파라미터 연결
          */
         // 보낼 데이터가 없으면 파라미터를 비운다.
-        if (_params == null)
+        if (_params == null) {
             sbParams.append("")
+            Log.d("method ", "GET")
+        }
         else {
             // 파라미터가 2개 이상이면 파라미터 연결에 &가 필요하므로 스위칭할 변수 생성.
             var isAnd = false
@@ -54,13 +58,29 @@ class RequestHttpURLConnection {
          * 2. HttpURLConnection을 통해 web의 데이터를 가져온다.
          */
         try {
-            val url = URL(_url)
-            urlConn = url.openConnection() as HttpURLConnection
 
-            // [2-1]. urlConn 설정.
-            urlConn.requestMethod="GET" // URL 요청에 대한 메소드 설정 : POST.
-            urlConn.setRequestProperty("Accept-Charset", "UTF-8") // Accept-Charset 설정.
-            urlConn.setRequestProperty("Context_Type", "application/x-www-form-urlencoded;cahrset=UTF-8")
+                val url = URL(_url)
+                urlConn = url.openConnection() as HttpURLConnection
+
+            if (_params == null) {
+                urlConn.requestMethod = "GET" // URL 요청에 대한 메소드 설정 : GET.// [2-1]. urlConn 설정.
+                urlConn.setRequestProperty("Accept-Charset", "UTF-8") // Accept-Charset 설정.
+                urlConn.setRequestProperty("Context_Type", "application/x-www-form-urlencoded;cahrset=UTF-8")
+
+            }else
+            {
+                urlConn.requestMethod = "POST" // URL 요청에 대한 메소드 설정 : POST.
+                urlConn.setRequestProperty("Accept-Charset", "UTF-8") // Accept-Charset 설정.
+                urlConn.setRequestProperty("Context_Type", "application/x-www-form-urlencoded;cahrset=UTF-8")
+                val strParams = sbParams.toString() //sbParams에 정리한 파라미터들을 스트링으로 저장. 예)id=id1&pw=123;
+                val os = urlConn.outputStream
+                os.write(strParams.toByteArray(charset("UTF-8"))) // 출력 스트림에 출력.
+                os.flush() // 출력 스트림을 플러시(비운다)하고 버퍼링 된 모든 출력 바이트를 강제 실행.
+                os.close() // 출력 스트림을 닫고 모든 시스템 자원을 해제.
+
+            }
+
+
 
 
             // [2-3]. 연결 요청 확인.

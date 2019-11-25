@@ -3,8 +3,10 @@ package com.example.front
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.ContentValues
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,19 +25,25 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_maps.*
 import android.location.Geocoder
 import android.location.Address
-import android.os.SystemClock
+import android.os.AsyncTask
+import android.util.Base64
 import android.widget.Button
 import android.widget.EditText
 import java.io.IOException
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
+import com.example.RequestHttpURLConnection
 import com.example.data.Spot
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import org.json.JSONArray
+import org.json.JSONException
+import java.io.ByteArrayInputStream
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapClickListener,GoogleMap.OnMarkerClickListener{
 
-    private lateinit var mMap: GoogleMap
+    lateinit var mMap: GoogleMap
     private lateinit var view: View
     private lateinit var mapFragment: SupportMapFragment
     private lateinit var geocoder: Geocoder
@@ -46,8 +54,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
     private lateinit var fab_close :Animation
     private lateinit var  onemarker :Marker
     private var isSelectedMarker = false
+    private lateinit var gettheSpotwithoutPhoto :GettheSpotwithoutPhoto
+    private lateinit var getthePhoto :GetthePhoto
 
-    private lateinit var gettheSpot :GettheSpot
+    lateinit var bitmap : Bitmap
+    val upLoadServerUri ="http://18.222.119.238:3000/spot/getspotphoto"
+    private lateinit var clientpic : ImageView
+
 
  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,13 +69,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
 
-
         //맵 데이터 가져오기
-
-        gettheSpot=GettheSpot()
-        gettheSpot.takemap(this)
-        gettheSpot.onaction()
-
+        gettheSpotwithoutPhoto=GettheSpotwithoutPhoto()
+        getthePhoto= GetthePhoto()
+        getSpotData()
 
         //search button
         editText =search_editText
@@ -71,18 +81,94 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         //floating button
         initFloatingButtonAction()
 
-
         view = layoutInflater.inflate(R.layout.marker_list, null) //마커 클릭시
+        clientpic =view.clientPic as ImageView
 
 
     }
 
-    fun getmapAsnc(){
+    inner class NetworkTask(private val url: String?, private val values: ContentValues?) : AsyncTask<Void, Void, String>() {
+        override fun doInBackground(vararg params: Void?): String? {
+            val result: String? // 요청 결과를 저장할 변수.
+            val requestHttpURLConnection = RequestHttpURLConnection()
+            result = requestHttpURLConnection.request(url!!, values) // 해당 URL로 부터 결과물을 얻어온다.
+            return result
+        }
 
+        override fun onPostExecute(s: String?) {
+            super.onPostExecute(s)
+            jsonParsing(s!!)
+            //동기화
+             }
+        private fun jsonParsing(json: String) {
+            try {
+                //parsing
+                val jsonArray= JSONArray(json)
+                val jsonObject=jsonArray.getJSONObject(0)
+                val photo_url = jsonObject.getJSONObject("photo_url")
+                val photoArray = photo_url.getJSONArray("data")
+                val bytes = ByteArray(photoArray.length())
+                for (i in 0 until photoArray.length()) {
+                    bytes[i] = (photoArray.get(i) as Int and 0xFF).toByte()
+                }
+                Log.d("bytes",String(bytes))
+//            var a = String(bytes)
+
+                val bImage = Base64.decode(String(bytes), 0)
+                val bais = ByteArrayInputStream(bImage)
+                bitmap = BitmapFactory.decodeStream(bais)
+                clientpic.setImageBitmap(bitmap)
+
+
+            } catch (e: JSONException) {
+                e.printStackTrace()
+            }
+
+        }
+
+    }
+
+    public override fun onResume() {
+        super.onResume()
+        if(isSelectedMarker)
+        {
+            mMap.clear()
+            isSelectedMarker=false
+            Log.d("리썸()", "resume")
+            getSpotData()
+            for (spot :Spot in gettheSpotwithoutPhoto.spot) {
+                val makerOptions = MarkerOptions()
+                makerOptions
+                        .position(LatLng(spot.latitude.toDouble(), spot.longitude.toDouble()))
+                        .title(spot.name) // 타이틀.
+                        .snippet(spot.address)
+                mMap.addMarker(makerOptions)
+            }
+            getmapAsnc()
+        }
+
+    }
+    fun onaction(id: String){
+        val url = upLoadServerUri
+        val values= ContentValues()
+        values.put("spot_id",id)
+        Log.d("id",id)
+        val networkTask = NetworkTask(url,values)
+        networkTask.execute()
+
+    }
+    fun getSpotData(){
+        gettheSpotwithoutPhoto.takemap(this)
+        gettheSpotwithoutPhoto.onaction()
+    }
+    fun getPhoto(id :String){
+        getthePhoto.takemap(this)
+        getthePhoto.onaction(id)
+    }
+    fun getmapAsnc(){
         //동기화
         mapFragment.getMapAsync(this)
     }
-
 
 
     private fun initFloatingButtonAction() {
@@ -150,9 +236,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
 
                 override fun getInfoContents(p0: Marker): View? {
                     Log.d("getInfoContents()","marker click")
-                    val addressTxt = view.addressTxt as TextView
+
+
+                    val addressTxt = view.nameTxt as TextView
                     addressTxt.text = p0.title
-                    val mobileTxt =view.mobileTxt as TextView
+                    val mobileTxt =view.addressTxt as TextView
                     mobileTxt.text=p0.snippet
                     return view
                 }
@@ -163,28 +251,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         setFloatingButtonAction()
         geocoder = Geocoder(this)
 
-        // for loop를 통한 n개의 마커 생성
-        for (idx in 0..9) {
-            val makerOptions = MarkerOptions()
-            makerOptions
-                    .position(LatLng(37.503444 + (idx*0.001), 126.957041 + (idx*0.001)))
-                    .title("마커$idx") // 타이틀.
-                    .snippet("박상오교수님사랑해요 - 최창환 - ")
-            mMap.addMarker(makerOptions)
-        }
-//                 TODO: "modify spot uninitialize//
-        for (spot :Spot in gettheSpot.spot) {
-            Log.d("id", spot.id)
-            Log.d("latitude", spot.latitude)
-            Log.d("longitude", spot.longitude)
-        }
-        for (spot :Spot in gettheSpot.spot) {
+
+        for (spot :Spot in gettheSpotwithoutPhoto.spot) {
             val makerOptions = MarkerOptions()
             makerOptions
                     .position(LatLng(spot.latitude.toDouble(), spot.longitude.toDouble()))
                     .title(spot.name) // 타이틀.
                     .snippet(spot.address)
+
             mMap.addMarker(makerOptions)
+                    .tag=spot.id
         }
 
         val zoomLevel = 16.0f
@@ -256,16 +332,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
 
         } catch (e:IOException) {
             e.printStackTrace()
-            Log.e("test", "입출력 오류 - 서버에서 주소변환시 에러발생");
+            Log.e("test", "입출력 오류 - 서버에서 주소변환시 에러발생")
         }
             return list!!.get(0).getAddressLine(0).toString()
         }
 
     override fun onMarkerClick(p0: Marker?): Boolean {
-        val center = CameraUpdateFactory.newLatLng(p0!!.position)
-        mMap.animateCamera(center)
-        Log.d("onMarkerClick", "Click here")
-        p0.showInfoWindow()
+        if(!isSelectedMarker||(isSelectedMarker && p0!=onemarker))
+        {
+            val center = CameraUpdateFactory.newLatLng(p0!!.position)
+            mMap.animateCamera(center)
+            Log.d("onMarkerClick", "Click here")
+            onaction(p0.tag.toString())
+//            Thread.sleep(5000)
+            p0.showInfoWindow()
+        }
+        else{
+            deleteBeforeMaker()
+        }
         return true
     }
 
@@ -279,8 +363,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         val makerOptions = MarkerOptions()
         makerOptions
                 .position(LatLng(p0.latitude, p0.longitude))
-                .title("미정")
-                .snippet("박상오교수님사랑해요 - 최창환 - ")
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN))
         mapFragment.getMapAsync {
             onemarker=mMap.addMarker(makerOptions)
