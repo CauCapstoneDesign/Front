@@ -71,20 +71,5 @@ class GetthePhoto {
 
     }
 
-//     fun  getBase64decode(content:String):Bitmap{
-//         val decodedString = Base64.decode(content, Base64.NO_WRAP)
-//         val decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
-//         return decodedByte
-//
-//     }
-//
-//    fun getURLDecode(content :String): String {
-//        try {
-//            return URLDecoder.decode(content, "utf-8")
-//        }catch (e:Exception) {
-//            Log.e("exception", e.toString())
-//        }
-//        return ""
-//    }
     }
 }

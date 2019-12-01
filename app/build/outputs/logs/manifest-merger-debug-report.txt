@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-61:12
 MERGED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\682673b32a54638fd3ae81fa4cc93b5a\AndroidManifest.xml:2:1-93:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\87d4e26dbec2d661adc695d34e986e27\AndroidManifest.xml:17:1-24:12
 MERGED from [gun0912.ted:tedpermission:2.2.2] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\ef7593f88b387d33ccef7f0010fdbffe\AndroidManifest.xml:2:1-17:12
@@ -57,16 +57,16 @@ MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] C:\Users\mose\.gradle\c
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\0c4af98566a28e0769a074b9e30ef119\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\7d3f8718855707f42db2d95b99bd87f8\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\27e6b6688a788e9b29991b01d4b3b379\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
-INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-61:12
+INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-61:12
 	package
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:5:5-32
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-61:12
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:4:5-51
@@ -74,18 +74,18 @@ INJECTED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:3:5-61
 	android:versionCode
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-58:12
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:1-61:12
 		INJECTED from D:\Front\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:7:9-71
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:7:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\682673b32a54638fd3ae81fa4cc93b5a\AndroidManifest.xml:13:5-67
 MERGED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\682673b32a54638fd3ae81fa4cc93b5a\AndroidManifest.xml:13:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\c638ce2b8fb561613cfc6cf735047714\AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\c638ce2b8fb561613cfc6cf735047714\AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:7:26-68
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:7:22-64
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from D:\Front\app\src\main\AndroidManifest.xml:8:5-79
 	android:name
@@ -111,7 +111,7 @@ ADDED from D:\Front\app\src\main\AndroidManifest.xml:14:5-40
 	dist:instant
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:14:18-37
 application
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:16:5-56:19
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:16:5-59:19
 MERGED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\682673b32a54638fd3ae81fa4cc93b5a\AndroidManifest.xml:15:5-91:19
 MERGED from [com.firebaseui:firebase-ui-auth:4.2.1] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\682673b32a54638fd3ae81fa4cc93b5a\AndroidManifest.xml:15:5-91:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\87d4e26dbec2d661adc695d34e986e27\AndroidManifest.xml:22:5-20
@@ -151,83 +151,95 @@ MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\mose\.gradle\c
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\mose\.gradle\caches\transforms-2\files-2.1\15cbed79884822bb4267dcf630ad267b\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:23:9-35
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:22:9-35
 	android:label
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:21:9-41
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:20:9-41
 	android:background
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:19:9-37
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:18:9-37
 	tools:ignore
 		ADDED from D:\Front\app\src\main\AndroidManifest.xml:25:9-48
 	android:roundIcon
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:22:9-54
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:21:9-54
 	android:icon
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:20:9-43
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:19:9-43
 	android:allowBackup
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:17:9-35
 	android:theme
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:24:9-59
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:23:9-59
 	android:usesCleartextTraffic
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:17:9-44
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:24:9-44
+activity#com.example.front.WeatherActivity
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:26:9-62
+	android:name
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:26:19-50
+activity#com.example.front.BoarderTitleActivity
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:27:9-58
+	android:name
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:27:19-55
+activity#com.example.front.BoarderActivity
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:28:9-53
+	android:name
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:28:19-50
 activity#com.example.front.GetHttpDataActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:26:9-66
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:29:9-57
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:26:19-54
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:29:19-54
 provider#androidx.core.content.FileProvider
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:28:9-36:20
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:31:9-39:20
 	android:grantUriPermissions
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:32:13-47
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:35:13-47
 	android:authorities
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:30:13-52
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:33:13-52
 	android:exported
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:31:13-37
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:34:13-37
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:29:13-62
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:32:13-62
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:33:13-35:53
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:36:13-38:53
 	android:resource
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:35:17-50
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:38:17-50
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:34:17-67
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:37:17-67
 meta-data#com.google.android.geo.API_KEY
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:38:9-40:71
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:41:9-43:71
 	android:value
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:40:13-68
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:43:13-68
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:39:13-58
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:42:13-58
 activity#com.example.front.EnrollMarkerActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:42:9-58
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:45:9-58
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:42:19-55
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:45:19-55
 activity#com.example.front.SplashActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:43:9-52:20
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:46:9-55:20
 	android:screenOrientation
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:45:13-49
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:48:13-49
 	android:theme
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:46:13-47
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:49:13-47
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:44:13-43
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:47:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:47:13-51:29
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:50:13-54:29
 action#android.intent.action.MAIN
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:48:17-69
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:51:17-69
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:48:25-66
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:51:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:50:17-77
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:53:17-77
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:50:27-74
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:53:27-74
 activity#com.example.front.LoginActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:53:9-51
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:56:9-51
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:53:19-48
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:56:19-48
 activity#com.example.front.MainActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:54:9-50
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:57:9-50
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:54:19-47
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:57:19-47
 activity#com.example.front.MapsActivity
-ADDED from D:\Front\app\src\main\AndroidManifest.xml:55:9-50
+ADDED from D:\Front\app\src\main\AndroidManifest.xml:58:9-50
 	android:name
-		ADDED from D:\Front\app\src\main\AndroidManifest.xml:55:19-47
+		ADDED from D:\Front\app\src\main\AndroidManifest.xml:58:19-47
 uses-sdk
 INJECTED from D:\Front\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\Front\app\src\main\AndroidManifest.xml

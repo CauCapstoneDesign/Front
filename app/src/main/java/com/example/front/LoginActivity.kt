@@ -62,12 +62,16 @@ class LoginActivity : AppCompatActivity() {
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == RC_SIGN_IN) {
-            val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
+                val result = Auth.GoogleSignInApi.getSignInResultFromIntent(data)
             if (result.isSuccess) {
                 val account = result.signInAccount
                 firebaseAuthWithGoogle(account!!)
             }
-            else {
+            else { 
+                //임시방편용
+                val nextIntent = Intent(this, MapsActivity::class.java)
+                startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                finish()
             }
         }
     }

@@ -161,10 +161,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         gettheSpotwithoutPhoto.takemap(this)
         gettheSpotwithoutPhoto.onaction()
     }
-    fun getPhoto(id :String){
-        getthePhoto.takemap(this)
-        getthePhoto.onaction(id)
-    }
+
+
     fun getmapAsnc(){
         //동기화
         mapFragment.getMapAsync(this)
@@ -178,6 +176,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         val fab: FloatingActionButton = fab_main as FloatingActionButton
         val fab1: FloatingActionButton = fab_sub1 as FloatingActionButton
         val fab2: FloatingActionButton = fab_sub2 as FloatingActionButton
+        val fab3: FloatingActionButton = fab_sub3 as FloatingActionButton
+        val fab4: FloatingActionButton = fab_sub4 as FloatingActionButton
         fab.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
             toggleFab()
@@ -198,7 +198,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
         })
         fab2.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View) {
-                val nextIntent=Intent(this@MapsActivity, GetHttpDataActivity::class.java)
+                val nextIntent=Intent(this@MapsActivity, BoarderTitleActivity::class.java)
+                startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                toggleFab()
+            }
+        })
+        fab3.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View) {
+                val nextIntent=Intent(this@MapsActivity, WeatherActivity::class.java)
+                startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
+                toggleFab()
+            }
+        })
+        fab4.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View) {
+                val nextIntent=Intent(this@MapsActivity, BoarderTitleActivity::class.java)
                 startActivity(nextIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP))
                 toggleFab()
             }
@@ -210,16 +224,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback ,GoogleMap.OnMapCli
             fab_main.setImageResource(R.drawable.ic_plus_24)
             fab_sub1.startAnimation(fab_close)
             fab_sub2.startAnimation(fab_close)
+            fab_sub3.startAnimation(fab_close)
+            fab_sub4.startAnimation(fab_close)
             fab_sub1.isClickable = false
             fab_sub2.isClickable = false
+            fab_sub3.isClickable = false
+            fab_sub4.isClickable = false
             isFabOpen = false
         }
         else {
             fab_main.setImageResource(R.drawable.ic_plus_24)
             fab_sub1.startAnimation(fab_open)
             fab_sub2.startAnimation(fab_open)
+            fab_sub3.startAnimation(fab_open)
+            fab_sub4.startAnimation(fab_open)
             fab_sub1.isClickable = true
             fab_sub2.isClickable = true
+            fab_sub3.isClickable = true
+            fab_sub4.isClickable = true
             isFabOpen = true
         }
     }

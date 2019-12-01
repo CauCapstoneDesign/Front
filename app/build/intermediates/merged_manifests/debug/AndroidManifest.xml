@@ -36,6 +36,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.example.front.WeatherActivity" />
+        <activity android:name="com.example.front.BoarderTitleActivity" />
+        <activity android:name="com.example.front.BoarderActivity" />
         <activity android:name="com.example.front.GetHttpDataActivity" />
 
         <provider
@@ -50,7 +53,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAgOx2rkGHHq4GK9SRHHnmVu85fMF0NXCk" />
+            android:value="AIzaSyA89nwzi4TrCGi-NKyN_GSolkHg7p2SamI" />
 
         <activity android:name="com.example.front.EnrollMarkerActivity" />
         <activity

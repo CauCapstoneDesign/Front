@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".BoarderActivity">
+
+    <RelativeLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/profile_imageview"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/no_image"
+            android:scaleType="fitCenter" />
+
+        <LinearLayout
+            android:id="@+id/hori"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/profile_imageview"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/sss"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/author_id"
+                    android:layout_width="106dp"
+                    android:layout_height="30dp"
+                    android:text="author_id"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="104dp"
+                    android:layout_height="30dp"
+                    android:text="date"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_toRightOf="@+id/hori"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="#BDBDBD" />
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="67dp"
+            android:layout_marginTop="-3dp"
+            android:layout_marginEnd="-12dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="49dp"
+                android:layout_height="50dp"
+                android:text="좋아요"
+                android:gravity="center"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#BDBDBD" />
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="글이 입력됩니다"
+        android:gravity="center"
+        android:textSize="14dp" />
+
+    <LinearLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="horizontal">
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#BDBDBD" />
+
+    <LinearLayout
+        android:id="@+id/commit_layout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/commit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="commit가 입력됩니다"
+            android:gravity="center"
+            android:textSize="14dp" />
+    </LinearLayout>
+
+</LinearLayout>

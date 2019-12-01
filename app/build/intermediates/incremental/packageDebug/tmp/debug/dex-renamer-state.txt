@@ -1,4 +1,4 @@
-#Tue Nov 26 03:56:37 KST 2019
-base.0=D\:\\Front\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+#Tue Dec 03 00:45:32 KST 2019
+base.0=D\:\\Front\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
